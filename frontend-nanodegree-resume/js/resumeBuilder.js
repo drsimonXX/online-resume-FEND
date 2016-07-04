@@ -13,7 +13,7 @@ This is empty on purpose! Your code to build the resume will go here.
 		"github": "drsimonXX",
 		"location": "Memphis, TN"
 	 },
-	 "url": "Picture URL: none",
+	 "biopic": "Picture URL: none",
 	 "welcomeMessage": "Junior web developer with front-end and back-end skills. Experienced in creating beautiful, interactive, multi-functional and responsive sites with simplistic layouts for the best user experience. Committed to continuous learning and researching solutions to resolve problems.",
 	 "skills": ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "Bootstrap", "jQuery", "Java"]
  };
@@ -22,12 +22,12 @@ This is empty on purpose! Your code to build the resume will go here.
 	 "position": "Current Position: Night Auditor",
 	 "employer": "Current Employer: Best Western Plus",
 	 "years": "2015-Present",
-	 "city": "City: Olive Branch, MS",
+	 "location": "location: Olive Branch, MS",
  };
  bio.education={
 	 "school": "School: Emory University",
 	 "years": "Years Attended: 2000-2003",
-	 "city": "City: Atlanta, GA"
+	 "location": "location: Atlanta, GA"
  };
  
  
@@ -38,14 +38,14 @@ This is empty on purpose! Your code to build the resume will go here.
 	 "schools": [
 	 {
 		"name": "University of Michigan",
-		"city": "Ann Arbor, MI",
+		"location": "Ann Arbor, MI",
 		"degree": "JD",
 		"major": "Law",
 		"date": "2008"
 	 },
 	 {
 		 "name": "Emory University",
-		 "city": "Atlanta, GA",
+		 "location": "Atlanta, GA",
 		 "degree": "BA",
 		 "major": "Psychology",
 		 "date": "2003"
@@ -82,21 +82,21 @@ This is empty on purpose! Your code to build the resume will go here.
 	 "position": "Night Auditor",
 	 "employer": "Best Western Plus",
 	 "years": "2015-Present",
-	 "city": "Olive Branch, MS",
+	 "location": "Olive Branch, MS",
 	 "description": "-Provide front office services such as guest check-in, check-out, payment processing and efficient complaint resolution.<br /> -Identify and correct accounting issues while managing the WinPM system used for all guest records."
 	},
 	{
 	 "position": "Contract IT Technician",
 	 "employer": "Self-Employed",
 	 "years": "2011-Present",
-	 "city": "Memphis, TN",
+	 "location": "Memphis, TN",
 	 "description": "-Diagnosed and resolved hardware and software issues for various clients and companies at a success rate of over 96%.<br />-Installed fully-functioning hardware and software on over 300 PC and Mac systems with turnaround time averaging under 48 hours."
 	 },
 	 {
 	  "position": "Night Auditor",
 	  "employer": "Clarion Hotel",
 	  "years": "2009-2011",
-	  "city": "Memphis, TN",
+	  "location": "Memphis, TN",
 	  "description": "-Rendered excellent guest service consistently, earning a performance-based raise.<br />-Identified and promptly corrected errors in the reservation system and financial data on a nightly basis.<br />-Provided successful night audit training to new employees on 5 occasions.<br />-Avoided major service delays by quickly resolving complications with hotel computers, printers and networks." 
 	 }
 	 
@@ -148,7 +148,7 @@ for (job in employment.work) {
 	
 	var formattedYears = HTMLworkDates.replace("%data%", employment.work[job].years);
 	$(".work-entry:last").append(formattedYears);
-	var formattedCity = HTMLworkLocation.replace("%data%", employment.work[job].city);
+	var formattedCity = HTMLworkLocation.replace("%data%", employment.work[job].location);
 	$(".work-entry:last").append(formattedCity);
 	var formattedDescription = HTMLworkDescription.replace("%data%", employment.work[job].description);
 	$(".work-entry:last").append(formattedDescription);
@@ -174,7 +174,7 @@ for (school in education.schools) {
 	var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
 	$(".education-entry:last").append(formattedMajor);
 	
-	var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+	var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
 	$(".education-entry:last").append(formattedLocation);
 }
 	$("#education").append(HTMLonlineClasses);
