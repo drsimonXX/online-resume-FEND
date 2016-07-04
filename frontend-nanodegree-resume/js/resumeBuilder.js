@@ -4,7 +4,7 @@ This is empty on purpose! Your code to build the resume will go here.
  
 
  
- var myBio = {
+ var bio = {
 	 "name": "Danielle R. Simon",
 	 "role": "Front-End Web Developer",
 	 "contacts":{
@@ -14,17 +14,17 @@ This is empty on purpose! Your code to build the resume will go here.
 		"location": "Memphis, TN"
 	 },
 	 "url": "Picture URL: none",
-	 "welcome": "Junior web developer with front-end and back-end skills. Experienced in creating beautiful, interactive, multi-functional and responsive sites with simplistic layouts for the best user experience. Committed to continuous learning and researching solutions to resolve problems.",
+	 "welcomeMessage": "Junior web developer with front-end and back-end skills. Experienced in creating beautiful, interactive, multi-functional and responsive sites with simplistic layouts for the best user experience. Committed to continuous learning and researching solutions to resolve problems.",
 	 "skills": ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "Bootstrap", "jQuery", "Java"]
  };
  
- myBio.work={
+ bio.work={
 	 "position": "Current Position: Night Auditor",
 	 "employer": "Current Employer: Best Western Plus",
 	 "years": "2015-Present",
 	 "city": "City: Olive Branch, MS",
  };
- myBio.education={
+ bio.education={
 	 "school": "School: Emory University",
 	 "years": "Years Attended: 2000-2003",
 	 "city": "City: Atlanta, GA"
@@ -103,27 +103,27 @@ This is empty on purpose! Your code to build the resume will go here.
 	]
  };
  
- var formattedName = HTMLheaderName.replace("%data%", myBio.name);
- var formattedJob = HTMLheaderRole.replace("%data%", myBio.role);
+ var formattedName = HTMLheaderName.replace("%data%", bio.name);
+ var formattedJob = HTMLheaderRole.replace("%data%", bio.role);
  var formattedNameRole = (formattedName + formattedJob);
- var formattedWelcome = HTMLwelcomeMsg.replace("%data%", myBio.welcome);
+ var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
  
   /* top and footer contacts */
  var formattedContactInfo = [];
- formattedContactInfo.push(HTMLmobile.replace("%data%", myBio.contacts.mobile));
- formattedContactInfo.push(HTMLemail.replace("%data%", myBio.contacts.email));
- formattedContactInfo.push(HTMLgithub.replace("%data%", myBio.contacts.github));
- formattedContactInfo.push(HTMLlocation.replace("%data%", myBio.contacts.location));
+ formattedContactInfo.push(HTMLmobile.replace("%data%", bio.contacts.mobile));
+ formattedContactInfo.push(HTMLemail.replace("%data%", bio.contacts.email));
+ formattedContactInfo.push(HTMLgithub.replace("%data%", bio.contacts.github));
+ formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
  
   $("#header").prepend(formattedNameRole);
   $("#header").append(formattedWelcome);
  
  /* for loop */
  
- if(myBio.skills.length > 0) {
+ if(bio.skills.length > 0) {
 	 $("#header").append(HTMLskillsStart);
 	for(var i=0; i<8; i++){
-		var formattedSkill = HTMLskills.replace("%data%", myBio.skills[i]);
+		var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
 		$("#skills").append(formattedSkill);
 	}
  }
