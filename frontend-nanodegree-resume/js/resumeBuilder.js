@@ -77,25 +77,25 @@ This is empty on purpose! Your code to build the resume will go here.
  }
  
  var employment = {
-	 "work": [
+	 "jobs": [
 	 {
-	 "position": "Night Auditor",
+	 "title": "Night Auditor",
 	 "employer": "Best Western Plus",
-	 "years": "2015-Present",
+	 "dates": "2015-Present",
 	 "location": "Olive Branch, MS",
 	 "description": "-Provide front office services such as guest check-in, check-out, payment processing and efficient complaint resolution.<br /> -Identify and correct accounting issues while managing the WinPM system used for all guest records."
 	},
 	{
-	 "position": "Contract IT Technician",
+	 "title": "Contract IT Technician",
 	 "employer": "Self-Employed",
-	 "years": "2011-Present",
+	 "dates": "2011-Present",
 	 "location": "Memphis, TN",
 	 "description": "-Diagnosed and resolved hardware and software issues for various clients and companies at a success rate of over 96%.<br />-Installed fully-functioning hardware and software on over 300 PC and Mac systems with turnaround time averaging under 48 hours."
 	 },
 	 {
-	  "position": "Night Auditor",
+	  "title": "Night Auditor",
 	  "employer": "Clarion Hotel",
-	  "years": "2009-2011",
+	  "dates": "2009-2011",
 	  "location": "Memphis, TN",
 	  "description": "-Rendered excellent guest service consistently, earning a performance-based raise.<br />-Identified and promptly corrected errors in the reservation system and financial data on a nightly basis.<br />-Provided successful night audit training to new employees on 5 occasions.<br />-Avoided major service delays by quickly resolving complications with hotel computers, printers and networks." 
 	 }
@@ -136,21 +136,21 @@ This is empty on purpose! Your code to build the resume will go here.
  
 
 function displayWork() {
-for (job in employment.work) {
+for (job in employment.jobs) {
 	$("#workExperience").append(HTMLworkStart);
 	
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", employment.work[job].employer);
-	var formattedTitle = HTMLworkTitle.replace("%data%", employment.work[job].position);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", employment.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", employment.jobs[job].title);
 	
 	var formattedEmployerTitle = formattedEmployer + formattedTitle;
 	
 	$(".work-entry:last").append(formattedEmployerTitle);
 	
-	var formattedYears = HTMLworkDates.replace("%data%", employment.work[job].years);
+	var formattedYears = HTMLworkDates.replace("%data%", employment.jobs[job].dates);
 	$(".work-entry:last").append(formattedYears);
-	var formattedCity = HTMLworkLocation.replace("%data%", employment.work[job].location);
+	var formattedCity = HTMLworkLocation.replace("%data%", employment.jobs[job].location);
 	$(".work-entry:last").append(formattedCity);
-	var formattedDescription = HTMLworkDescription.replace("%data%", employment.work[job].description);
+	var formattedDescription = HTMLworkDescription.replace("%data%", employment.jobs[job].description);
 	$(".work-entry:last").append(formattedDescription);
 	
 	
