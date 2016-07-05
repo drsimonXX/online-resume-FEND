@@ -13,12 +13,12 @@ This is empty on purpose! Your code to build the resume will go here.
 		"github": "drsimonXX",
 		"location": "Memphis, TN"
 	 },
-	 "biopic": "Picture URL: none",
+	 "biopic": "images/biopic.jpg",
 	 "welcomeMessage": "Junior web developer with front-end and back-end skills. Experienced in creating beautiful, interactive, multi-functional and responsive sites with simplistic layouts for the best user experience. Committed to continuous learning and researching solutions to resolve problems.",
 	 "skills": ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "Bootstrap", "jQuery", "Java"]
  };
  
- bio.work={
+/* bio.work={
 	 "position": "Current Position: Night Auditor",
 	 "employer": "Current Employer: Best Western Plus",
 	 "years": "2015-Present",
@@ -29,7 +29,7 @@ This is empty on purpose! Your code to build the resume will go here.
 	 "years": "Years Attended: 2000-2003",
 	 "location": "location: Atlanta, GA"
  };
- 
+ */
  
  /*
  JSON--in order to be valid in jsonlint, must remove the variable and end semicolon
@@ -107,6 +107,7 @@ This is empty on purpose! Your code to build the resume will go here.
  var formattedJob = HTMLheaderRole.replace("%data%", bio.role);
  var formattedNameRole = (formattedName + formattedJob);
  var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+ var formattedPic = HTMLbioPic.replace("%data%", bio.biopic);
  
   /* top and footer contacts */
  var formattedContactInfo = [];
@@ -116,6 +117,7 @@ This is empty on purpose! Your code to build the resume will go here.
  formattedContactInfo.push(HTMLlocation.replace("%data%", bio.contacts.location));
  
   $("#header").prepend(formattedNameRole);
+  $("#header").append(formattedPic);
   $("#header").append(formattedWelcome);
  
  /* for loop */
@@ -203,22 +205,26 @@ var projects = {
 	 {
 		"title": "Portfolio",
 		"date": "2016",
-		"description": "-Created a responsive portfolio that features projects built with HTML5, CSS3, PHP, MySQL, Bootstrap and Java.<br />-Optimized portfolio for all browsers and mobile devices using Bootstrap, media queries and vendor prefixes when necessary."
+		"description": "-Created a responsive portfolio that features projects built with HTML5, CSS3, PHP, MySQL, Bootstrap and Java.<br />-Optimized portfolio for all browsers and mobile devices using Bootstrap, media queries and vendor prefixes when necessary.",
+		"images": ["images/portfolio_site_555w.jpg"/*, "images/portfolio_site2_555w.jpg"*/]
 	 },
 	 {
 		"title": "Ren Wants Riches",
 		"date": "2015",
-		"description": "-Multi-page, responsive personal site built with Bootstrap, MySQL and PHP.<br />-Developed fully-functioning search engine and comment sections to aid content customization and user interactivity.<br />-Customized layout similar to a blog site, including brief article content previews for users."
+		"description": "-Multi-page, responsive personal site built with Bootstrap, MySQL and PHP.<br />-Developed fully-functioning search engine and comment sections to aid content customization and user interactivity.<br />-Customized layout similar to a blog site, including brief article content previews for users.",
+		"images": ["images/ren_site_555w.jpg"]
 	 },
 	 {
 		"title": "Pacific Trails Resort",
 		"date": "2014",
-		"description": "-Responsive HTML and CSS site built to showcase and attract visitors to Pacific Trails Resort.<br />-Included a reservations form in JavaScript to allow interested parties to book a reservation through the site.<br />-Limited browser compatibility issues in Internet Explorer with spinner menu, allowing reservations form to accept typed-in number inputs."
+		"description": "-Responsive HTML and CSS site built to showcase and attract visitors to Pacific Trails Resort.<br />-Included a reservations form in JavaScript to allow interested parties to book a reservation through the site.<br />-Limited browser compatibility issues in Internet Explorer with spinner menu, allowing reservations form to accept typed-in number inputs.",
+		"images": ["images/pacific_site_555w.jpg"]
 	 },
 	 {
 		"title": "OnSale",
 		"date": "2014",
-		"description": "-Built simple interactive cost-calculating program using object-oriented programming in Java with Java Swing.<br />-Swing GUI allows users in locations where the sales tax is 9.25% to enter in the original price and the sales discount and receive an exact total price."
+		"description": "-Built simple interactive cost-calculating program using object-oriented programming in Java with Java Swing.<br />-Swing GUI allows users in locations where the sales tax is 9.25% to enter in the original price and the sales discount and receive an exact total price.",
+		"images": ["images/onsale_555w.jpg"]
 	 }
 	]
  }
@@ -233,6 +239,19 @@ for (p in projects.projects) {
 	$(".project-entry:last").append(formattedProjectDate);
 	var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[p].description);
 	$(".project-entry:last").append(formattedProjectDescription);
+	var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[p].images);
+	$(".project-entry:last").append(formattedProjectImage);
+	
+	/*if(projects.projects.images.length > 0) {
+		$("#projects").append(HTMLprojectStart);
+		projects.projects.images.forEach(function(p){
+			var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[p].images);
+			$(".project-entry:last").append(formattedProjectImage);
+	 });
+ }*/
+	
+	/*var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[p].images);
+	$(".project-entry:last").append(formattedProjectDescription);*/
 }
 }
 
