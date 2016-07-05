@@ -24,6 +24,10 @@ h6 {
   padding: 0 5%;
 }
 
+.education-entry {
+	margin-bottom: 20px;
+}
+
 h1 {
   font-size: 40px;
   color: #f5a623;
@@ -88,7 +92,6 @@ p {
 a {
   color: #1199c3;
   text-decoration: none;
-  margin-top: 10px;
   display: block;
 }
 
@@ -129,7 +132,12 @@ a {
 
 /* TODO: Replace with image later */
 #header {
-  background-color: #484848;
+  /*background-color: #484848;*/
+  background-color: grey;
+}
+
+#footerContacts {
+	background-color: grey;
 }
 
 .flex-box {
@@ -158,6 +166,7 @@ ul {
 
 img {
   padding: 10px;
+  width: 400px;
 }
 
 span {

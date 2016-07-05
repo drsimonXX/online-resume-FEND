@@ -206,7 +206,7 @@ var projects = {
 		"title": "Portfolio",
 		"date": "2016",
 		"description": "-Created a responsive portfolio that features projects built with HTML5, CSS3, PHP, MySQL, Bootstrap and Java.<br />-Optimized portfolio for all browsers and mobile devices using Bootstrap, media queries and vendor prefixes when necessary.",
-		"images": ["images/portfolio_site_555w.jpg"/*, "images/portfolio_site2_555w.jpg"*/]
+		"images": ["images/portfolio_site_555w.jpg"]
 	 },
 	 {
 		"title": "Ren Wants Riches",
@@ -249,9 +249,6 @@ for (p in projects.projects) {
 			$(".project-entry:last").append(formattedProjectImage);
 	 });
  }*/
-	
-	/*var formattedProjectImage = HTMLprojectImage.replace("%data%", projects.projects[p].images);
-	$(".project-entry:last").append(formattedProjectDescription);*/
 }
 }
 
