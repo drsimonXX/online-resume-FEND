@@ -1,9 +1,4 @@
-/*
-This is empty on purpose! Your code to build the resume will go here.
- */
- 
 
- 
  var bio = {
 	 "name": "Danielle R. Simon",
 	 "role": "Front-End Web Developer",
@@ -18,19 +13,6 @@ This is empty on purpose! Your code to build the resume will go here.
 	 "skills": ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "Bootstrap", "jQuery", "Java"]
  };
  
-/* bio.work={
-	 "position": "Current Position: Night Auditor",
-	 "employer": "Current Employer: Best Western Plus",
-	 "years": "2015-Present",
-	 "location": "location: Olive Branch, MS",
- };
- bio.education={
-	 "school": "School: Emory University",
-	 "years": "Years Attended: 2000-2003",
-	 "location": "location: Atlanta, GA"
- };
- */
- 
  /*
  JSON--in order to be valid in jsonlint, must remove the variable and end semicolon
  */
@@ -40,15 +22,15 @@ This is empty on purpose! Your code to build the resume will go here.
 		"name": "University of Michigan",
 		"location": "Ann Arbor, MI",
 		"degree": "JD",
-		"major": "Law",
-		"date": "2008"
+		"majors": "Law",
+		"dates": "2008"
 	 },
 	 {
 		 "name": "Emory University",
 		 "location": "Atlanta, GA",
 		 "degree": "BA",
-		 "major": "Psychology",
-		 "date": "2003"
+		 "majors": "Psychology",
+		 "dates": "2003"
 	 }
 	]
  }
@@ -76,7 +58,7 @@ This is empty on purpose! Your code to build the resume will go here.
 	]
  }
  
- var employment = {
+ var work = {
 	 "jobs": [
 	 {
 	 "title": "Night Auditor",
@@ -103,6 +85,8 @@ This is empty on purpose! Your code to build the resume will go here.
 	]
  };
  
+ 
+ function displayBio() {
  var formattedName = HTMLheaderName.replace("%data%", bio.name);
  var formattedJob = HTMLheaderRole.replace("%data%", bio.role);
  var formattedNameRole = (formattedName + formattedJob);
@@ -130,29 +114,30 @@ This is empty on purpose! Your code to build the resume will go here.
 	}
  }
  
- 
  for (info in formattedContactInfo) {
 	 $("#topContacts").append(formattedContactInfo[info]);
 	 $("#footerContacts").append(formattedContactInfo[info]);
  }
+}
  
+displayBio();
 
 function displayWork() {
-for (job in employment.jobs) {
+for (job in work.jobs) {
 	$("#workExperience").append(HTMLworkStart);
 	
-	var formattedEmployer = HTMLworkEmployer.replace("%data%", employment.jobs[job].employer);
-	var formattedTitle = HTMLworkTitle.replace("%data%", employment.jobs[job].title);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 	
 	var formattedEmployerTitle = formattedEmployer + formattedTitle;
 	
 	$(".work-entry:last").append(formattedEmployerTitle);
 	
-	var formattedYears = HTMLworkDates.replace("%data%", employment.jobs[job].dates);
+	var formattedYears = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 	$(".work-entry:last").append(formattedYears);
-	var formattedCity = HTMLworkLocation.replace("%data%", employment.jobs[job].location);
+	var formattedCity = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 	$(".work-entry:last").append(formattedCity);
-	var formattedDescription = HTMLworkDescription.replace("%data%", employment.jobs[job].description);
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 	$(".work-entry:last").append(formattedDescription);
 	
 	
@@ -170,10 +155,10 @@ for (school in education.schools) {
 	var formattedNameDegree = formattedSchoolName + formattedDegree;
 	$(".education-entry:last").append(formattedNameDegree);
 	
-	var formattedSchoolDate = HTMLschoolDates.replace("%data%", education.schools[school].date);
+	var formattedSchoolDate = HTMLschoolDates.replace("%data%", education.schools[school].dates);
 	$(".education-entry:last").append(formattedSchoolDate);
 	
-	var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+	var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
 	$(".education-entry:last").append(formattedMajor);
 	
 	var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
@@ -204,25 +189,25 @@ var projects = {
 	 "projects": [
 	 {
 		"title": "Portfolio",
-		"date": "2016",
+		"dates": "2016",
 		"description": "-Created a responsive portfolio that features projects built with HTML5, CSS3, PHP, MySQL, Bootstrap and Java.<br />-Optimized portfolio for all browsers and mobile devices using Bootstrap, media queries and vendor prefixes when necessary.",
 		"images": ["images/portfolio_site_555w.jpg"]
 	 },
 	 {
 		"title": "Ren Wants Riches",
-		"date": "2015",
+		"dates": "2015",
 		"description": "-Multi-page, responsive personal site built with Bootstrap, MySQL and PHP.<br />-Developed fully-functioning search engine and comment sections to aid content customization and user interactivity.<br />-Customized layout similar to a blog site, including brief article content previews for users.",
 		"images": ["images/ren_site_555w.jpg"]
 	 },
 	 {
 		"title": "Pacific Trails Resort",
-		"date": "2014",
+		"dates": "2014",
 		"description": "-Responsive HTML and CSS site built to showcase and attract visitors to Pacific Trails Resort.<br />-Included a reservations form in JavaScript to allow interested parties to book a reservation through the site.<br />-Limited browser compatibility issues in Internet Explorer with spinner menu, allowing reservations form to accept typed-in number inputs.",
 		"images": ["images/pacific_site_555w.jpg"]
 	 },
 	 {
 		"title": "OnSale",
-		"date": "2014",
+		"dates": "2014",
 		"description": "-Built simple interactive cost-calculating program using object-oriented programming in Java with Java Swing.<br />-Swing GUI allows users in locations where the sales tax is 9.25% to enter in the original price and the sales discount and receive an exact total price.",
 		"images": ["images/onsale_555w.jpg"]
 	 }
@@ -235,7 +220,7 @@ for (p in projects.projects) {
 	
 	var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[p].title);
 	$(".project-entry:last").append(formattedProjectTitle);
-	var formattedProjectDate = HTMLprojectDates.replace("%data%", projects.projects[p].date);
+	var formattedProjectDate = HTMLprojectDates.replace("%data%", projects.projects[p].dates);
 	$(".project-entry:last").append(formattedProjectDate);
 	var formattedProjectDescription = HTMLprojectDescription.replace("%data%", projects.projects[p].description);
 	$(".project-entry:last").append(formattedProjectDescription);
