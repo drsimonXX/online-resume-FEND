@@ -25,7 +25,7 @@ h6 {
 }
 
 .education-entry {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 h1 {
@@ -62,7 +62,6 @@ h3,
 h4,
 h5 {
   padding:10px 5%;
-
 }
 
 
@@ -130,9 +129,7 @@ a {
   background-color: #4a4a4a;
 }
 
-/* TODO: Replace with image later */
 #header {
-  /*background-color: #484848;*/
   background-color: grey;
 }
 
