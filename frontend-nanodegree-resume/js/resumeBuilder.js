@@ -110,7 +110,7 @@
 	]
  };
 
- function displayBio() {
+ bio.display = function() {
 	var formattedName = HTMLheaderName.replace("%data%", bio.name);
 	var formattedJob = HTMLheaderRole.replace("%data%", bio.role);
 	var formattedNameRole = (formattedName + formattedJob);
@@ -145,9 +145,9 @@
 	}
  }
 
- displayBio();
+ bio.display();
 
- function displayWork() {
+ work.display = function() {
 	work.jobs.forEach(function(job) {
 		$("#workExperience").append(HTMLworkStart);
 
@@ -164,9 +164,9 @@
 	});
  }
 
- displayWork();
+ work.display();
 
- function displayEducation() {
+ education.display = function() {
 	education.schools.forEach(function(school) {
 		$("#education").append(HTMLschoolStart);
 
@@ -197,9 +197,9 @@
 	});
  }
 
- displayEducation();
+ education.display();
 
- function displayProjects() {
+ projects.display = function() {
 	projects.projects.forEach(function(p) {
 		$("#projects").append(HTMLprojectStart);
 
@@ -214,7 +214,7 @@
 	});
  }
 
- displayProjects();
+ projects.display();
 
  $("#mapDiv").append(googleMap);
 
