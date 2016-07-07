@@ -14,50 +14,45 @@
  };
 
  var education = {
-	 "schools": [
-	 {
+	 "schools": [{
 		"name": "University of Michigan",
 		"location": "Ann Arbor, MI",
 		"degree": "JD",
-		"majors": "Law",
-		"dates": "2008"
+		"majors": ["Law"],
+		"dates": "2008",
+		"url": "http://law.umich.edu"
 	 },
 	 {
 		 "name": "Emory University",
 		 "location": "Atlanta, GA",
 		 "degree": "BA",
-		 "majors": "Psychology",
-		 "dates": "2003"
+		 "majors": ["Psychology"],
+		 "dates": "2003",
+		 "url": "http://www.emory.edu"
 	 }
-	]
- };
-
- var onlineCourses = {
-	 "schools": [
-	 {
-		"title": "Front-End Web Developer Nanodegree",
-		"school": "Udacity",
-		"dates": "2016",
-		"url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
+	],
+	 "onlineCourses": [{
+		 "title": "Front-End Web Developer Nanodegree",
+		 "school": "Udacity",
+		 "dates": "2016",
+		 "url": "https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001"
 	 },
 	 {
-		"title": "The Complete Web Developer Course 1.0",
-		"school": "Udemy",
-		"dates": "2015",
-		"url": "https://www.udemy.com/complete-web-developer-course/learn/v4/overview"
+		 "title": "The Complete Web Developer Course 1.0",
+		 "school": "Udemy",
+		 "dates": "2015",
+		 "url": "https://www.udemy.com/complete-web-developer-course/learn/v4/overview"
 	 },
 	 {
-		"title": "Java Tutorial for Complete Beginners",
-		"school": "Udemy",
-		"dates": "2014",
-		"url": "https://www.udemy.com/java-tutorial/learn/v4/overview"
-	 }
-	]
+		 "title": "Java Tutorial for Complete Beginners",
+		 "school": "Udemy",
+		 "dates": "2014",
+		 "url": "https://www.udemy.com/java-tutorial/learn/v4/overview"
+	 }]
  };
 
  var work = {
-	 "jobs": [
-	 {
+	 "jobs": [{
 	 "title": "Night Auditor",
 	 "employer": "Best Western Plus",
 	 "dates": "2015-Present",
@@ -77,8 +72,7 @@
 	  "dates": "2009-2011",
 	  "location": "Memphis, TN",
 	  "description": "-Rendered excellent guest service consistently, earning a performance-based raise.<br />-Identified and promptly corrected errors in the reservation system and financial data on a nightly basis.<br />-Provided successful night audit training to new employees on 5 occasions.<br />-Avoided major service delays by quickly resolving complications with hotel computers, printers and networks."
-	 }
-	]
+	 }]
  };
 
  var projects = {
@@ -170,21 +164,23 @@
 	education.schools.forEach(function(school) {
 		$("#education").append(HTMLschoolStart);
 
-		var formattedSchoolName = HTMLschoolName.replace("%data%", /*education.schools[school]*/school.name);
-		var formattedDegree = HTMLschoolDegree.replace("%data%", /*education.schools[school]*/school.degree);
+		var formattedSchoolName = HTMLschoolName.replace("%data%", school.name);
+		var formattedDegree = HTMLschoolDegree.replace("%data%", school.degree);
 		var formattedNameDegree = formattedSchoolName + formattedDegree;
 		$(".education-entry:last").append(formattedNameDegree);
-		var formattedSchoolDate = HTMLschoolDates.replace("%data%", /*education.schools[school]*/school.dates);
+		var formattedSchoolDate = HTMLschoolDates.replace("%data%", school.dates);
 		$(".education-entry:last").append(formattedSchoolDate);
-		var formattedMajor = HTMLschoolMajor.replace("%data%", /*education.schools[school]*/school.majors);
+		var formattedMajor = HTMLschoolMajor.replace("%data%", school.majors);
 		$(".education-entry:last").append(formattedMajor);
-		var formattedLocation = HTMLschoolLocation.replace("%data%", /*education.schools[school]*/school.location);
+		var formattedLocation = HTMLschoolLocation.replace("%data%", school.location);
 		$(".education-entry:last").append(formattedLocation);
+		var formattedURL = HTMLonlineURL.replace("%data%", school.url);
+		$(".education-entry:last").append(formattedURL);
 	});
 
 	$("#education").append(HTMLonlineClasses);
 
-	onlineCourses.schools.forEach(function(internet) {
+	education.onlineCourses.forEach(function(internet) {
 		$("#education").append(HTMLschoolStart);
 		var formattedTitle = HTMLonlineTitle.replace("%data%", internet.title);
 		var formattedSchool = HTMLonlineSchool.replace("%data%", internet.school);
