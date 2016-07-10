@@ -185,7 +185,7 @@ span {
   }
 }
 
-@media only screen and (max-width:900px) {
+@media only screen and (max-width: 900px) {
   .biopic {
     width: 175px;
   }
@@ -219,5 +219,11 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  body {
+    width: 100vw;
   }
 }

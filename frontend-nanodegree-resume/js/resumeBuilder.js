@@ -8,7 +8,7 @@
 		"github": "drsimonXX",
 		"location": "Memphis, TN"
 	 },
-	 "biopic": "images/biopic.jpg",
+	 "biopic": "images/fry.jpg",
 	 "welcomeMessage": "Junior web developer with front-end and back-end skills. Experienced in creating beautiful, interactive, multi-functional and responsive sites with simplistic layouts for the best user experience. Committed to continuous learning and researching solutions to resolve problems.",
 	 "skills": ["HTML5", "CSS3", "JavaScript", "PHP", "MySQL", "Bootstrap", "jQuery", "Java"]
  };
